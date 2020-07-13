@@ -15,11 +15,17 @@ const db = low(adapter);
 // Home page
 app.get("/", (req, res) => {
   const menu = db.get("menu").value();
+  const sermon = db.get("sermons").find({ id: 0 }).value();
+  const sermons = db.get("sermons").value();
+  const events = db.get("events").value();
   if (menu) {
     const location = req.path;
     res.render("pages/home", {
       location: location,
       menu: menu,
+      sermon: sermon,
+      sermons: sermons,
+      events: events,
     });
   }
   // console.log(menu);
@@ -45,5 +51,5 @@ app.get("/events", (req, res) => res.send("Hello World!"));
 app.get("/about", (req, res) => res.send("Hello World!"));
 
 app.listen(port, () =>
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://185.69.154.177:${port}`)
 );

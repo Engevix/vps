@@ -1,74 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include ('../partials/head') %> 
+    <%- include ('../partials/head') %>
   </head>
 
   <body>
+    <%- include ('../partials/menu') %>
 
-    <%- include ('../partials/menu') %> 
-
-    <div class="latest-sermon">
-      <div class="sermon">
-        <div class="sermon__preview">
-          <img class="sermon__image" src="#" alt="" />
-          <div class="sermon__button--active">?</div>
-        </div>
-        <div class="sermon__description">
-          <div class="sermon__title">Косы Соломона</div>
-          <div class="sermon__sub-description">
-            <div class="sermon__author">Алексей Боб</div>
-            •
-            <div class="sermon__date">Март 22, 2020</div>
+    <div class="container">
+      <!-- Последняя проповедь которая есть только на главном экране -->
+      <div class="latest-sermon">
+        <div class="sermon">
+          <div class="sermon__preview">
+            <img
+              class="sermon__image sermon__image--big"
+              src="https://picsum.photos/1280/720"
+              alt=""
+            />
+            <div class="sermon__button--active"></div>
+          </div>
+          <div class="sermon__description">
+            <div class="sermon__title sermon__title--big">
+              <%= sermon.title %>
+            </div>
+            <div class="sermon__sub-description">
+              <div class="sermon__author sermon__author--big">
+                <%= sermon.author %>
+              </div>
+              <div class="sermon__separator">•</div>
+              <div class="sermon__date sermon__date--big">
+                <%= sermon.date %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <hr>
+    <div class="container">
+      <!-- Список одинаковый для всех -->
+      <div class="list">
+        <div class="list__description">
+          <div class="list__title">Свежие проповеди</div>
+          <button class="list__button">Все проповеди</button>
+        </div>
+        <div class="list__items">
+          <!-- Здесь любые компоненты -->
 
-    <div class="list">
-      <div class="list__title">Свежие проповеди</div>
-      <button class="list__button">?</button>
-      <div class="list__items">
-        <!-- Здесь любые компоненты -->
-      </div>
-    </div>
+          <!-- Все проповеди кроме первой -->
+          <% for(var i=3; i < sermons.length; i++) {%>
+          <div class="sermon">
+            <div class="sermon__preview">
+              <img
+                class="sermon__image"
+                src="https://picsum.photos/1280/720"
+                alt=""
+              />
+              <div class="sermon__button--active"></div>
+            </div>
+            <div class="sermon__description">
+              <div class="sermon__title"><%= sermons[i].title %></div>
+              <div class="sermon__sub-description">
+                <div class="sermon__author"><%= sermons[i].author %></div>
+                <div class="sermon__separator">•</div>
+                <div class="sermon__date"><%= sermons[i].date %></div>
+              </div>
+            </div>
+          </div>
+          <%} %>
 
-    <div class="sermon">
-      <div class="sermon__preview">
-        <img class="sermon__image" src="#" alt="" />
-        <div class="sermon__button--active">?</div>
-      </div>
-      <div class="sermon__description">
-        <div class="sermon__title">Косы Соломона</div>
-        <div class="sermon__sub-description">
-          <div class="sermon__author">Алексей Боб</div>
-          •
-          <div class="sermon__date">Март 22, 2020</div>
+          <!-- Конец списка -->
         </div>
       </div>
     </div>
+    <hr>
+    <div class="container">
+      <!-- Список одинаковый для всех -->
+      <div class="list">
+        <div class="list__description">
+          <div class="list__title">События</div>
+          <button class="list__button">Все события</button>
+        </div>
+        <div class="list__items">
+          <!-- Здесь любые компоненты -->
 
-    <div class="event">
-      <div class="event__preview">
-        <img class="event__image" src="#" alt="" />
-        <div class="event__date">
-          <div class="event__day">22</div>
-          <div class="event__month">Матра</div>
-        </div>
-      </div>
-      <div class="schedule event__schedule">
-        <div class="schedule__description">
-          <div class="schedule__title">Воскресное служение</div>
-          <div class="schedule__time">10:00</div>
-        </div>
-        <hr />
-        <div class="schedule__description">
-          <div class="schedule__title">Вечерние молодежное служение</div>
-          <div class="schedule__time">17:00</div>
+          <!-- Вывод событий -->
+          <% for(var i=0; i < events.length; i++) {%>
+          <div class="event">
+            <div class="event__preview">
+              <img
+                class="event__image"
+                src="https://picsum.photos/1280/720"
+                alt=""
+              />
+              <div class="event__date">
+                <div class="event__day"><%= events[i].date.day %></div>
+                <div class="event__month"><%= events[i].date.month %></div>
+              </div>
+            </div>
+            <div class="event__schedule schedule">
+              <% for(var j=0; j < events[i].schedule.length; j++) {%>
+              <div class="schedule__description">
+                <div class="schedule__title">
+                  <%= events[i].schedule[j].title %>
+                </div>
+                <div class="schedule__time">
+                  <%= events[i].schedule[j].time %>
+                </div>
+              </div>
+              <%} %>
+            </div>
+          </div>
+          <%} %>
+
+          <!-- Конец списка -->
         </div>
       </div>
     </div>
-
-    
   </body>
 </html>
