@@ -1,0 +1,28 @@
+{
+  "menu": [
+    {
+      "id": 0,
+      "title": "Главная",
+      "location": "/",
+      "active": true
+    },
+    {
+      "id": 1,
+      "title": "Проповеди",
+      "location": "/sermons",
+      "active": false
+    },
+    {
+      "id": 2,
+      "title": "События",
+      "location": "/events",
+      "active": false
+    },
+    {
+      "id": 3,
+      "title": "О нас",
+      "link": "/about",
+      "active": false
+    }
+  ]
+}

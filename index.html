@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../partials/head') %> 
+  </head>
+
+  <body>
+    <div class="menu">
+      <div class="menu__logo logo">
+        <div class="logo__icon">
+          <svg
+            width="23"
+            height="21"
+            viewBox="0 0 23 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M22.0695 1.03186V16.5046C22.0695 17.0719 21.6061 17.5346 21.0365 17.5361C18.6347 17.5418 14.6107 18.0424 11.8347 20.9474V9.61184H15.3541V8.10696H11.8347V4.75495C11.8347 4.56261 11.8837 4.38193 11.9765 4.23241C14.255 0.563215 18.6333 0.00572827 21.0404 0H21.043C21.3154 0 22.041 0.0712532 22.041 0.0712532C22.041 0.0712532 22.041 0.0712305 22.0695 1.03186Z"
+              fill="black"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3.71933e-05 1.03446V16.546C3.71933e-05 17.1148 0.464607 17.5786 1.03566 17.5801C3.44349 17.5858 7.47755 18.0877 10.2605 21V9.63597H6.73227V8.12731H10.2605V4.76689C10.2605 4.57407 10.2113 4.39293 10.1184 4.24304C7.83418 0.564629 3.44485 0.00574265 1.03167 0H1.02914C0.756022 0 0.0285959 0.0714321 0.0285959 0.0714321C0.0285959 0.0714321 0.0285959 0.0714094 3.71933e-05 1.03446Z"
+              fill="black"
+            />
+          </svg>
+        </div>
+        <div class="logo__text">Евангельская Жизнь</div>
+      </div>
+      <div class="menu__list">
+        <div class="menu__item menu__item--active">Главная</div>
+        <div class="menu__item">Проповеди</div>
+        <div class="menu__item">События</div>
+        <div class="menu__item">О нас</div>
+      </div>
+      <div class="menu__control">
+        <button class="menu__button">?</button>
+      </div>
+    </div>
+
+    <div class="latest-sermon">
+      <div class="sermon">
+        <div class="sermon__preview">
+          <img class="sermon__image" src="#" alt="" />
+          <div class="sermon__button--active">?</div>
+        </div>
+        <div class="sermon__description">
+          <div class="sermon__title">Косы Соломона</div>
+          <div class="sermon__sub-description">
+            <div class="sermon__author">Алексей Боб</div>
+            •
+            <div class="sermon__date">Март 22, 2020</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list">
+      <div class="list__title">Свежие проповеди</div>
+      <button class="list__button">?</button>
+      <div class="list__items">
+        <!-- Здесь любые компоненты -->
+      </div>
+    </div>
+
+    <div class="sermon">
+      <div class="sermon__preview">
+        <img class="sermon__image" src="#" alt="" />
+        <div class="sermon__button--active">?</div>
+      </div>
+      <div class="sermon__description">
+        <div class="sermon__title">Косы Соломона</div>
+        <div class="sermon__sub-description">
+          <div class="sermon__author">Алексей Боб</div>
+          •
+          <div class="sermon__date">Март 22, 2020</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event__preview">
+        <img class="event__image" src="#" alt="" />
+        <div class="event__date">
+          <div class="event__day">22</div>
+          <div class="event__month">Матра</div>
+        </div>
+      </div>
+      <div class="schedule event__schedule">
+        <div class="schedule__description">
+          <div class="schedule__title">Воскресное служение</div>
+          <div class="schedule__time">10:00</div>
+        </div>
+        <hr />
+        <div class="schedule__description">
+          <div class="schedule__title">Вечерние молодежное служение</div>
+          <div class="schedule__time">17:00</div>
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
