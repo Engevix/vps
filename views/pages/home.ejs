@@ -14,7 +14,8 @@
           <div class="sermon__preview">
             <img
               class="sermon__image sermon__image--big"
-              src="https://picsum.photos/1280/720"
+              loading="lazy"
+              src="/images/<%= sermon.image %>"
               alt=""
             />
             <div class="sermon__button--active"></div>
@@ -53,7 +54,8 @@
             <div class="sermon__preview">
               <img
                 class="sermon__image"
-                src="https://picsum.photos/1280/720"
+                loading="lazy"
+                src="/images/<%= sermons[i].image %>"
                 alt=""
               />
               <div class="sermon__button--active"></div>
@@ -90,7 +92,8 @@
             <div class="event__preview">
               <img
                 class="event__image"
-                src="https://picsum.photos/1280/720"
+                loading="lazy"
+                src="/images/<%= events[i].image %>"
                 alt=""
               />
               <div class="event__date">

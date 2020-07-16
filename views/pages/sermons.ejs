@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include ('../partials/head') %> 
+    <%- include ('../partials/head') %>
   </head>
 
   <body>
+    <%- include ('../partials/menu') %>
 
-    <%- include ('../partials/menu') %> 
+    <div class="container">
+      <!-- Список одинаковый для всех -->
+      <div class="list">
+        <div class="list__description">
+          <div class="list__title">Свежие проповеди</div>
+          <button class="list__button">Все проповеди</button>
+        </div>
+        <div class="list__items">
+          <!-- Здесь любые компоненты -->
 
-    <h1>SErmons</h1>
-    
+          <!-- Все проповеди кроме первой -->
+          <% for(var i=3; i < sermons.length; i++) {%>
+          <div class="sermon">
+            <div class="sermon__preview">
+              <img
+                class="sermon__image"
+                loading="lazy"
+                src="<%= sermons[i].image %>"
+                alt=""
+              />
+              <div class="sermon__button--active"></div>
+            </div>
+            <div class="sermon__description">
+              <div class="sermon__title"><%= sermons[i].title %></div>
+              <div class="sermon__sub-description">
+                <div class="sermon__author"><%= sermons[i].author %></div>
+                <div class="sermon__separator">•</div>
+                <div class="sermon__date"><%= sermons[i].date %></div>
+              </div>
+            </div>
+          </div>
+          <%} %>
+
+          <!-- Конец списка -->
+        </div>
+      </div>
+    </div>
   </body>
 </html>
