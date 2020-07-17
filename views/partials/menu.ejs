@@ -1,5 +1,5 @@
 <div class="menu">
-  <!-- <div class="menu__container"> -->
+  <div class="menu__left">
     <div class="menu__logo logo">
       <div class="logo__icon">
         <svg
@@ -23,15 +23,47 @@
           />
         </svg>
       </div>
-      <div class="logo__text">Евангельская Жизнь</div>
-    </div>
-    <div class="menu__list"> 
-      <% for(var i=0; i<menu.length;i++) {%>
-        <a class="menu__item <%= menu[i].location === location ? 'menu__item--active' : '' %>" href="<%= menu[i].location %>"><%=menu[i].title %></a>
-      <%} %>
+      <div class="logo__text">Церковь Евангельская Жизнь</div>
     </div>
     <div class="menu__control">
-      <button class="menu__button">?</button>
+      <button class="menu__button">
+        <svg
+          width="28"
+          height="13"
+          viewBox="0 0 28 13"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="1.25"
+            y1="1.25"
+            x2="27.25"
+            y2="1.25"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <line
+            x1="1.25"
+            y1="12.25"
+            x2="27.25"
+            y2="12.25"
+            stroke="black"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
     </div>
-  <!-- </div> -->
+  </div>
+
+  <div class="menu__right">
+    <div class="menu__list">
+      <% for(var i=0; i<menu.length;i++) {%>
+          <a class="menu__item <%= menu[i].location === location ? 'menu__item--active' : '' %>" href="<%= menu[i].location %>"><%=menu[i].title %></a>
+        <%} %>
+    </div>
+  </div>
 </div>

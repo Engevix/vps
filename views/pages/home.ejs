@@ -7,118 +7,166 @@
   <body>
     <%- include ('../partials/menu') %>
 
-    <div class="container">
-      <!-- Последняя проповедь которая есть только на главном экране -->
-      <div class="latest-sermon">
+    <!-- Последняя проповедь которая есть только на главном экране -->
+    <div class="latest-sermon">
+      <div class="preview">
+        <img
+          class="preview__image"
+          loading="lazy"
+          src="https://elevationchurch.org/app/uploads/2019/06/060219_WhenTheBattleChoosesYou_App-640x360.jpg"
+          alt=""
+        />
+        <div class="preview__area">
+          <!-- Insert to this area what you want -->
+
+          <button class="button-action">
+            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.3864 0.394745C10.4171 0.394745 0.713745 10.0979 0.713745 22.0674C0.713745 34.0368 10.4171 43.74 22.3864 43.74C34.3557 43.74 44.059 34.0368 44.059 22.0674C44.059 10.0979 34.3557 0.394745 22.3864 0.394745ZM29.877 23.2162L19.0407 29.9889C18.8214 30.1258 18.5721 30.1946 18.3228 30.1946C18.0969 30.1946 17.8707 30.1384 17.666 30.0246C17.2354 29.7859 16.9682 29.3328 16.9682 28.8401V15.2947C16.9682 14.802 17.2354 14.3489 17.666 14.1101C18.0965 13.87 18.623 13.8846 19.0407 14.1459L29.877 20.9186C30.2728 21.1666 30.5136 21.6005 30.5136 22.0674C30.5136 22.5343 30.2728 22.9682 29.877 23.2162Z" fill="white"/>
+              </svg>              
+          </button>
+        </div>
+      </div>
+      <div class="latest-sermon__description">
+        <div class="latest-sermon__top-description">
+          <div class="latest-sermon__title sermon__title--big">
+            <%= sermon.title %>
+          </div>
+          <button class="latest-sermon__button--share">
+            <svg
+              width="15"
+              height="20"
+              viewBox="0 0 15 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.375 6.25H12.5V7.50001H13.75V18.75H1.25001V7.50001H2.50003V6.25H0.625007C0.279535 6.25 0 6.52954 0 6.87501V19.375C0 19.7205 0.279535 20 0.625007 20H14.375C14.7205 20 15 19.7205 15 19.375V6.87501C15 6.52954 14.7205 6.25 14.375 6.25Z"
+                fill="black"
+              />
+              <path
+                d="M6.87493 2.39258V11.25H8.12495V2.39258L10.8081 5.07568L11.6918 4.1919L7.49994 0L3.30804 4.1919L4.19183 5.07568L6.87493 2.39258Z"
+                fill="black"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="latest-sermon__down-description">
+          <div class="latest-sermon__author">
+            <%= sermon.author %>
+          </div>
+          <div class="latest-sermon__separator">•</div>
+          <div class="latest-sermon__date">
+            <%= sermon.date %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- Список одинаковый для всех -->
+    <div class="list">
+      <div class="list__description">
+        <div class="list__title">Новые проповеди</div>
+        <!-- <button class="list__button">Все проповеди</button> -->
+      </div>
+      <div class="list__items">
+        <!-- Здесь любые компоненты -->
+
+        <!-- Все проповеди кроме первой -->
+        <% for(var i=1; i < sermons.length; i++) {%>
         <div class="sermon">
-          <div class="sermon__preview">
+          <div class="preview">
             <img
-              class="sermon__image sermon__image--big"
+              class="preview__image"
               loading="lazy"
-              src="/images/<%= sermon.image %>"
+              src="<%= sermons[i].image %>"
               alt=""
             />
-            <div class="sermon__button--active"></div>
+            <div class="preview__area">
+              <!-- Insert to this area what you want -->
+
+              <button class="button-action">
+                  <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.3864 0.394745C10.4171 0.394745 0.713745 10.0979 0.713745 22.0674C0.713745 34.0368 10.4171 43.74 22.3864 43.74C34.3557 43.74 44.059 34.0368 44.059 22.0674C44.059 10.0979 34.3557 0.394745 22.3864 0.394745ZM29.877 23.2162L19.0407 29.9889C18.8214 30.1258 18.5721 30.1946 18.3228 30.1946C18.0969 30.1946 17.8707 30.1384 17.666 30.0246C17.2354 29.7859 16.9682 29.3328 16.9682 28.8401V15.2947C16.9682 14.802 17.2354 14.3489 17.666 14.1101C18.0965 13.87 18.623 13.8846 19.0407 14.1459L29.877 20.9186C30.2728 21.1666 30.5136 21.6005 30.5136 22.0674C30.5136 22.5343 30.2728 22.9682 29.877 23.2162Z" fill="white"/>
+                    </svg>              
+                </button>
+            </div>
           </div>
+          <!-- <div class="preview__button--active"></div> -->
           <div class="sermon__description">
-            <div class="sermon__title sermon__title--big">
-              <%= sermon.title %>
-            </div>
+            <div class="sermon__title"><%= sermons[i].title %></div>
             <div class="sermon__sub-description">
-              <div class="sermon__author sermon__author--big">
-                <%= sermon.author %>
-              </div>
+              <div class="sermon__author"><%= sermons[i].author %></div>
               <div class="sermon__separator">•</div>
-              <div class="sermon__date sermon__date--big">
-                <%= sermon.date %>
-              </div>
+              <div class="sermon__date"><%= sermons[i].date %></div>
             </div>
           </div>
         </div>
+        <%} %>
+
+        <!-- Конец списка -->
       </div>
     </div>
-    <hr>
-    <div class="container">
-      <!-- Список одинаковый для всех -->
-      <div class="list">
-        <div class="list__description">
-          <div class="list__title">Свежие проповеди</div>
-          <button class="list__button">Все проповеди</button>
-        </div>
-        <div class="list__items">
-          <!-- Здесь любые компоненты -->
-
-          <!-- Все проповеди кроме первой -->
-          <% for(var i=3; i < sermons.length; i++) {%>
-          <div class="sermon">
-            <div class="sermon__preview">
-              <img
-                class="sermon__image"
-                loading="lazy"
-                src="/images/<%= sermons[i].image %>"
-                alt=""
-              />
-              <div class="sermon__button--active"></div>
-            </div>
-            <div class="sermon__description">
-              <div class="sermon__title"><%= sermons[i].title %></div>
-              <div class="sermon__sub-description">
-                <div class="sermon__author"><%= sermons[i].author %></div>
-                <div class="sermon__separator">•</div>
-                <div class="sermon__date"><%= sermons[i].date %></div>
-              </div>
-            </div>
-          </div>
-          <%} %>
-
-          <!-- Конец списка -->
-        </div>
+    <hr />
+    <!-- Список одинаковый для всех -->
+    <div class="list">
+      <div class="list__description">
+        <div class="list__title">События</div>
+        <!-- <button class="list__button">Все события</button> -->
       </div>
-    </div>
-    <hr>
-    <div class="container">
-      <!-- Список одинаковый для всех -->
-      <div class="list">
-        <div class="list__description">
-          <div class="list__title">События</div>
-          <button class="list__button">Все события</button>
-        </div>
-        <div class="list__items">
-          <!-- Здесь любые компоненты -->
+      <div class="list__items">
+        <!-- Здесь любые компоненты -->
 
-          <!-- Вывод событий -->
-          <% for(var i=0; i < events.length; i++) {%>
-          <div class="event">
-            <div class="event__preview">
-              <img
-                class="event__image"
-                loading="lazy"
-                src="/images/<%= events[i].image %>"
-                alt=""
-              />
+        <!-- Вывод событий -->
+        <% for(var i=0; i < events.length; i++) {%>
+        <div class="event">
+          <div class="preview">
+            <img
+              class="preview__image"
+              loading="lazy"
+              src="<%= events[i].image %>"
+              alt=""
+            />
+            <div class="preview__area">
+              <!-- Insert to this area what you want -->
               <div class="event__date">
-                <div class="event__day"><%= events[i].date.day %></div>
-                <div class="event__month"><%= events[i].date.month %></div>
+                <div class="event__day">22</div>
+                <div class="event__month">Марта</div>
               </div>
-            </div>
-            <div class="event__schedule schedule">
-              <% for(var j=0; j < events[i].schedule.length; j++) {%>
-              <div class="schedule__description">
-                <div class="schedule__title">
-                  <%= events[i].schedule[j].title %>
-                </div>
-                <div class="schedule__time">
-                  <%= events[i].schedule[j].time %>
-                </div>
-              </div>
-              <%} %>
+              <!-- <button class="button-action"> ё
+                  <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.3864 0.394745C10.4171 0.394745 0.713745 10.0979 0.713745 22.0674C0.713745 34.0368 10.4171 43.74 22.3864 43.74C34.3557 43.74 44.059 34.0368 44.059 22.0674C44.059 10.0979 34.3557 0.394745 22.3864 0.394745ZM29.877 23.2162L19.0407 29.9889C18.8214 30.1258 18.5721 30.1946 18.3228 30.1946C18.0969 30.1946 17.8707 30.1384 17.666 30.0246C17.2354 29.7859 16.9682 29.3328 16.9682 28.8401V15.2947C16.9682 14.802 17.2354 14.3489 17.666 14.1101C18.0965 13.87 18.623 13.8846 19.0407 14.1459L29.877 20.9186C30.2728 21.1666 30.5136 21.6005 30.5136 22.0674C30.5136 22.5343 30.2728 22.9682 29.877 23.2162Z" fill="white"/>
+                    </svg>              
+                </button> -->
             </div>
           </div>
-          <%} %>
-
-          <!-- Конец списка -->
+          <div class="event__schedule schedule">
+            <% for(var j=0; j < events[i].schedule.length; j++) {%>
+            <div class="schedule__description">
+              <div class="schedule__title">
+                <%= events[i].schedule[j].title %>
+              </div>
+              <div class="schedule__time">
+                <%= events[i].schedule[j].time %>
+              </div>
+            </div>
+            <%} %>
+          </div>
         </div>
+        <%} %>
+
+        <!-- Конец списка -->
       </div>
     </div>
+    
+    <script>
+      function resizeAllImages() {
+        let images = document.querySelectorAll('img');
+        for (let image of images) {
+          image.height = image.width / 16 * 9;
+        }
+      }
+      window.addEventListener('load', resizeAllImages);
+      window.addEventListener('resize', resizeAllImages);
+    </script>
   </body>
 </html>

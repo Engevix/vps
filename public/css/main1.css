@@ -1,0 +1,302 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Black.ttf") format("truetype");
+  font-weight: 900;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.menu {
+  padding: 0 270px;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.04);
+          box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.04);
+  background: #ffffff;
+  position: fixed;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__item {
+  font-weight: 500;
+  font-size: 19px;
+  color: #000000;
+  opacity: 0.4;
+  padding: 0 20px;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 70px;
+  border-bottom: 2px solid transparent;
+}
+
+.menu__item--active {
+  font-size: 19px;
+  color: #000000;
+  opacity: 1;
+  border-bottom: 2px solid #000;
+  line-height: 70px;
+}
+
+.menu__control {
+  display: none;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo__icon {
+  margin-right: 4px;
+}
+
+.logo__text {
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.container {
+  width: 720px;
+  margin: 0 auto;
+}
+
+hr {
+  padding: 20px 0 0px 0;
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid rgba(187, 187, 187, 0.1);
+}
+
+.list__description {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.list__title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.list__button {
+  padding: 0 10px;
+  height: 21px;
+  font-size: 12px;
+  border: 1px solid #323232;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+  background: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+
+.list__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.list__items > .sermon,
+.list .event {
+  padding: 0 10px;
+}
+
+.list__items > :first-child {
+  padding: 0 10px 0 0;
+}
+
+.list__items > :last-child {
+  padding: 0 0 0 10px;
+}
+
+.sermon {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.sermon__image {
+  width: 100%;
+}
+
+.sermon__title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: -3px;
+}
+
+.sermon__title--big {
+  font-size: 32px;
+}
+
+.sermon__sub-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sermon__author {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.sermon__author--big {
+  font-size: 16px;
+}
+
+.sermon__separator {
+  padding: 0 3px;
+}
+
+.sermon__date {
+  font-size: 10px;
+}
+
+.sermon__date--big {
+  font-size: 16px;
+}
+
+.latest-sermon {
+  padding-top: 150px;
+}
+
+.event__preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.event__image {
+  width: 100%;
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
+}
+
+.event__date {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.event__day {
+  font-size: 50px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.event__month {
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.schedule__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.schedule__title {
+  width: 70%;
+  font-size: 22px;
+  font-weight: 700;
+  word-wrap: break-word;
+  line-height: 19px;
+}
+
+.schedule__time {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.schedule > .schedule__description:last-child {
+  border-bottom: none;
+}
+/*# sourceMappingURL=main1.css.map */

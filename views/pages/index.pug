@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css")
+    link(rel="stylesheet" href="/css/pug.css")
+  body
+
+<!-- Menu -->
+  .menu
+    .menu__left
+      .menu__logo.logo
+        .logo__icon
+        .logo__text Церковь Евангельская Жизнь
+      .menu__control
+        button.menu__button
+        
+    .menu__right
+      .menu__list
+        each i in menu
+          if location === i.location
+            a.menu__item.menu__item--active(href=i.location) #{i.title}
+          else
+            a.menu__item(href=i.location) #{i.title}
+
+<!-- Latest sermon -->
+  .latest-sermon
+    .preview
+      img.preview__image(loading='lazy' src='https://elevationchurch.org/app/uploads/2019/06/060219_WhenTheBattleChoosesYou_App-640x360.jpg' alt='')
+      .preview__area
+        // Insert to this area what you want
+        // Add action button 
+        .button-action
+          .button-action__icon
+    .latest-sermon__description
+      .latest-sermon__top-description
+        .latest-sermon__title.sermon__title--big #{sermon.title}
+        .latest-sermon__button--share
+      .latest-sermon__down-description
+        .latest-sermon__author #{sermon.author}
+        .latest-sermon__separator &bull;
+        .latest-sermon__date #{sermon.date} 
+  hr
+<!-- Recent sermons list -->
+
+  // Список одинаковый для всех
+  .list
+    .list__description
+      .list__title Новые проповеди
+      // <button class="list__button">Все проповеди</button>
+    .list__items
+      // Здесь любые компоненты
+      each sermon in sermons
+        .sermon
+          .preview
+            img.preview__image(loading='lazy' src=sermon.image alt='')
+            .preview__area
+              // Insert to this area what you want
+              .button-action
+                .button-action__icon
+          .sermon__description
+            .sermon__title #{sermon.title}
+            .sermon__sub-description
+              .sermon__author #{sermon.author}
+              .sermon__separator &bull;
+              .sermon__date #{sermon.date}
+
+  hr
+<!-- Events list -->
+  .list
+    .list__description
+      .list__title События
+      // <button class="list__button">Все события</button>
+    .list__items
+      // Здесь любые компоненты
+      // Вывод событий
+      each event in events
+        .event
+          .preview
+            img.preview__image(loading='lazy' src=event.image alt='')
+            .preview__area
+              // Insert to this area what you want
+              .event__date
+                .event__day #{event.date.day}
+                .event__month #{event.date.month}
+          .event__schedule.schedule
+            each schedule in event.schedules            
+              .schedule__description
+                .schedule__title #{schedule.title}
+                .schedule__time #{schedule.time}
+
+  hr
+<!-- Some fotter -->
+  .information-section
+    .information-section__list 
+      .information-section__title Разделы меню
+      .information-section__items
+        .information-section__item Главная
+        .information-section__item Проповеди
+        .information-section__item События
+        .information-section__item О нас
+    .information-section__list
+      .information-section__title Адресс
+      .information-section__items
+        .information-section__item Харьков, пр. Победы 55к, 61002
+    .information-section__list
+      .information-section__title Социальные сети
+      .information-section__items
+        .information-section__item Youtube
+        .information-section__item Facebook
+        .information-section__item Instagram
+    .information-section__list
+      .information-section__title Телефон
+      .information-section__items
+        .information-section__item 096 715 0549
+
+  script.
+    function resizeAllImages() {
+      let images = document.querySelectorAll('img');
+      for (let image of images) {
+        image.height = image.width / 16 * 9;
+      }
+    }
+    window.addEventListener('load', resizeAllImages);
+    window.addEventListener('resize', resizeAllImages);

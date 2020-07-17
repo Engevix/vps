@@ -2,13 +2,17 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const compression = require('compression')
+const compression = require("compression");
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+app.set("view engine", "pug");
 
 // compress all responses
-app.use(compression())
+app.use(compression());
+
+// Create the Router
+// const router = express.Router();
 
 // Connect to database
 const low = require("lowdb");
@@ -25,7 +29,7 @@ app.get("/", (req, res) => {
   const events = db.get("events").value();
   if (menu) {
     const location = req.path;
-    res.render("pages/home", {
+    res.render("pages/index", {
       location: location,
       menu: menu,
       sermon: sermon,
@@ -33,7 +37,6 @@ app.get("/", (req, res) => {
       events: events,
     });
   }
-  // console.log(menu);
 });
 
 // Sermons page
@@ -91,6 +94,11 @@ app.get("/about", (req, res) => {
     });
   }
   // console.log(menu);
+});
+
+// Обработка ошибки 404
+app.use(function (req, res, next) {
+  res.status(404).send("Not Found");
 });
 
 app.listen(port, () =>

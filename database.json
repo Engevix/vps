@@ -29,10 +29,10 @@
   "sermons": [
     {
       "id": 0,
-      "title": "Косы Соломона",
-      "author": "Алексей Боб",
+      "title": "Смиренным Бог даёт благодать",
+      "author": "Агличев Виктор",
       "date": "Март 22, 2020",
-      "image": "1.png",
+      "image": "https://elevationchurch.org/app/uploads/2019/05/EC_thumbnail.jpg.webp",
       "link": "#"
     },
     {
@@ -40,7 +40,7 @@
       "title": "Признаки падения",
       "author": "Виктор Агличев",
       "date": "Март 16, 2019",
-      "image": "2.png",
+      "image": "https://elevationchurch.org/app/uploads/2020/01/012620_Ghosted_FeaturedImage.jpg.webp",
       "link": "#"
     },
     {
@@ -48,7 +48,7 @@
       "title": "Сила толкования",
       "author": "Владислав Дзюба",
       "date": "Апрель 9, 2019",
-      "image": "3.png",
+      "image": "https://elevationchurch.org/app/uploads/2019/05/EC_Cover-0807.jpg.webp",
       "link": "#"
     },
     {
@@ -56,7 +56,7 @@
       "title": "Признаки падения",
       "author": "Виктор Агличев",
       "date": "Март 16, 2019",
-      "image": "2.png",
+      "image": "https://elevationchurch.org/app/uploads/2019/05/EC_thumbnail_0109.jpg.webp",
       "link": "#"
     },
     {
@@ -64,19 +64,19 @@
       "title": "Сила толкования",
       "author": "Владислав Дзюба",
       "date": "Апрель 9, 2019",
-      "image": "3.png",
+      "image": "https://elevationchurch.org/app/uploads/2019/05/waia_feature-640x360.jpg",
       "link": "#"
     }
   ],
   "events": [
     {
       "id": 0,
-      "image": "4.png",
+      "image": "https://mobileaxept.com/wp-content/uploads/2019/07/church-event-planning-checklist-e1563381351434.jpg",
       "date": {
         "day": 22,
         "month": "Марта"
       },
-      "schedule": [
+      "schedules": [
         {
           "id": 0,
           "title": "Воскресное служение",
@@ -91,12 +91,12 @@
     },
     {
       "id": 2,
-      "image": "5.png",
+      "image": "https://cdn.nohat.cc/thumb/f/720/6225983300435968.jpg",
       "date": {
         "day": 26,
         "month": "Марта"
       },
-      "schedule": [
+      "schedules": [
         {
           "id": 0,
           "title": "Молитвенное",

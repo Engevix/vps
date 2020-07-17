@@ -1,0 +1,19 @@
+.information-section__list {
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+.information-section__title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.information-section__items > * {
+  margin-top: 4px;
+}
+
+.information-section__item {
+  font-size: 14px;
+  font-weight: 500;
+}
+/*# sourceMappingURL=information-section.css.map */
